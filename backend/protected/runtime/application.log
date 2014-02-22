@@ -1,0 +1,209 @@
+2014/02/11 21:01:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/contact".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contact')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/daily-standup-backend/site/contact
+---
+2014/02/11 21:29:09 [error] [exception.CException] exception 'CException' with message 'ApiController and its behaviors do not have a method or closure named "_getStatusCodeMessage".' in C:\xampp\htdocs\yii-1.1.4\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\daily-standup-backend\protected\controllers\ApiController.php(70): CComponent->__call('_getStatusCodeM...', Array)
+#1 C:\xampp\htdocs\daily-standup-backend\protected\controllers\ApiController.php(70): ApiController->_getStatusCodeMessage(501)
+#2 C:\xampp\htdocs\daily-standup-backend\protected\controllers\ApiController.php(34): ApiController->_sendResponse(501, 'Error: Mode <b>...')
+#3 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): ApiController->actionList()
+#4 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('list')
+#8 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#9 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/daily-standup-backend/api/list
+---
+2014/02/12 23:29:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "teams/list".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('teams/list')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/daily-standup-backend/api/teams
+---
+2014/02/12 23:38:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members')
+#3 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/daily-standup-backend/api/members
+---
+2014/02/12 23:39:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members')
+#3 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/daily-standup-backend/api/members
+---
+2014/02/12 23:40:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members')
+#3 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/daily-standup-backend/api/members
+---
+2014/02/12 23:41:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members')
+#3 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/daily-standup-backend/api/members
+---
+2014/02/12 23:41:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/members/list".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members/lis...')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/daily-standup-backend/rest/members
+---
+2014/02/12 23:44:09 [error] [exception.CException] exception 'CException' with message 'MembersController and its behaviors do not have a method or closure named "_sendResponse".' in C:\xampp\htdocs\yii-1.1.4\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\daily-standup-backend\protected\modules\api\controllers\MembersController.php(26): CComponent->__call('_sendResponse', Array)
+#1 C:\xampp\htdocs\daily-standup-backend\protected\modules\api\controllers\MembersController.php(26): MembersController->_sendResponse(200, '[{"id":"1","fir...')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): MembersController->actionList()
+#3 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('list')
+#7 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members/lis...')
+#8 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/daily-standup-backend/rest/members
+---
+2014/02/13 20:48:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members')
+#3 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/daily-standup-backend/api/members
+---
+2014/02/18 19:09:27 [error] [exception.CDbException] exception 'CDbException' with message 'Relation "members" is not defined in active record class "Project".' in C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php:226
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(296): CActiveFinder->buildJoinTree(Object(CJoinElement), 'members')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#2 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Project), Array)
+#3 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1355): CActiveRecord->getActiveFinder(Array)
+#4 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1486): CActiveRecord->query(Object(CDbCriteria))
+#5 C:\xampp\htdocs\daily-standup-backend\protected\modules\api\controllers\ProjectsController.php(17): CActiveRecord->findByPk('1')
+#6 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): ProjectsController->actionView()
+#7 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('view')
+#11 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/projects/vi...')
+#12 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/daily-standup-backend/rest/projects/1
+---
+2014/02/18 19:09:43 [error] [exception.CDbException] exception 'CDbException' with message 'Relation "ProjectMember" is not defined in active record class "Project".' in C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php:226
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(281): CActiveFinder->buildJoinTree(Object(CJoinElement), 'ProjectMember', Array)
+#1 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(296): CActiveFinder->buildJoinTree(Object(CJoinElement), 'members')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#3 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Project), Array)
+#4 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1355): CActiveRecord->getActiveFinder(Array)
+#5 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1486): CActiveRecord->query(Object(CDbCriteria))
+#6 C:\xampp\htdocs\daily-standup-backend\protected\modules\api\controllers\ProjectsController.php(17): CActiveRecord->findByPk('1')
+#7 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): ProjectsController->actionView()
+#8 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/projects/vi...')
+#13 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/daily-standup-backend/rest/projects/1
+---
+2014/02/18 19:09:53 [error] [php] include(ProjectMember.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii-1.1.4\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(182): model()
+#2 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel()
+#3 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(281): CActiveFinder->buildJoinTree()
+#4 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(296): CActiveFinder->buildJoinTree()
+#5 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#6 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct()
+#7 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1355): Project->getActiveFinder()
+#8 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1486): Project->query()
+#9 C:\xampp\htdocs\daily-standup-backend\protected\modules\api\controllers\ProjectsController.php(17): Project->findByPk()
+#10 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): ProjectsController->actionView()
+#11 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): ProjectsController->runAction()
+#13 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): ProjectsController->run()
+#15 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\daily-standup-backend\index.php(13): CWebApplication->run()
+REQUEST_URI=/daily-standup-backend/rest/projects/1
+in C:\xampp\htdocs\daily-standup-backend\protected\modules\api\controllers\ProjectsController.php (17)
+in C:\xampp\htdocs\daily-standup-backend\index.php (13)
+2014/02/18 19:11:25 [error] [exception.CDbException] exception 'CDbException' with message 'The relation "projectMembers" in active record class "Project" is specified with an invalid foreign key "project_id". There is no such column in the table "project_members".' in C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php:1096
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(1067): CJoinElement->joinOneMany(Object(CJoinElement), Array, Object(CJoinElement), Object(CJoinElement))
+#1 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(1295): CJoinElement->getJoinCondition()
+#2 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(1290): CJoinQuery->join(Object(CJoinElement))
+#3 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(790): CJoinQuery->join(Object(CJoinElement))
+#4 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(435): CJoinElement->buildQuery(Object(CJoinQuery))
+#5 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#6 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), false)
+#7 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1486): CActiveRecord->query(Object(CDbCriteria))
+#8 C:\xampp\htdocs\daily-standup-backend\protected\modules\api\controllers\ProjectsController.php(17): CActiveRecord->findByPk('1')
+#9 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): ProjectsController->actionView()
+#10 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('view')
+#14 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/projects/vi...')
+#15 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\daily-standup-backend\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/daily-standup-backend/rest/projects/1
+---
+2014/02/22 15:31:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members')
+#3 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\www.daily-standup.com\daily-standup-backend\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/www.daily-standup.com/daily-standup-backend/api/members
+---
+2014/02/22 15:31:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(270): CController->missingAction('1')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('1')
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members/1')
+#3 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\www.daily-standup.com\daily-standup-backend\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/www.daily-standup.com/daily-standup-backend/api/members/1
+---
