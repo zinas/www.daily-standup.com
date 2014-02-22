@@ -1,3 +1,3 @@
-require(["jquery", "semantic-ui"], function($) {
-
+require(["react", "jsx!scripts/components/example"], function(React, CommentBox) {
+    React.renderComponent(new CommentBox(), document.getElementById('content'));
 });
