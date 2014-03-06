@@ -1,3 +1,5 @@
-require(["react", "jsx!scripts/components/example"], function(React, CommentBox) {
-    React.renderComponent(new CommentBox(), document.getElementById('content'));
+require(['backbone', 'router', 'react', 'jsx!templates/navbar'], function(backbone, router, React, Navbar) {
+    React.renderComponent(new Navbar(), document.getElementById('main'));
+
+    Backbone.history.start();
 });

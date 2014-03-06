@@ -7,13 +7,17 @@ requirejs.config({
     'underscore' : 'bower_components/underscore/underscore',
     'semantic-ui' : 'bower_components/semantic-ui/build/packaged/javascript/semantic',
 
-    // React
+    // Require pluginx
     'jsx': "scripts/require/jsx",
+    'html': "scripts/require/text",
+
+    // React
     'JSXTransformer': 'bower_components/react/JSXTransformer',
     'react' : 'bower_components/react/react',
 
     // Models
-    'member' : "scripts/models/member"
+    'member' : "scripts/models/member",
+    'router' : "scripts/router"
   },
 
   shim: {

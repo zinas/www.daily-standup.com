@@ -26,7 +26,17 @@ return array(
 		// 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
 		// 	'ipFilters'=>array('127.0.0.1','::1'),
 		// ),
-		'api'
+		'api',
+		'postman' => array(
+			'components' => array(
+				'gmail' => array(
+					'class'=>'GmailComponent',
+					'username' => 'zinas.nikos.dev@gmail.com',
+					'password' => 'potato1pass',
+					'hostname' => '{imap.gmail.com:993/imap/ssl}INBOX'
+				)
+			)
+		)
 	),
 
 	// application components

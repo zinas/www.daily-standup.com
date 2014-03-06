@@ -1,5 +1,5 @@
 define(["jquery", "react"], function($, React) {
-    var CommentBox = React.createClass({
+    return React.createClass({
       render: function() {
         return (
           <div className="commentBox">
@@ -8,6 +8,4 @@ define(["jquery", "react"], function($, React) {
         );
       }
     });
-
-    return CommentBox;
 });
