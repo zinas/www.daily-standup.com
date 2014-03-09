@@ -34,7 +34,17 @@ return array(
 					'username' => 'zinas.nikos.dev@gmail.com',
 					'password' => 'potato1pass',
 					'hostname' => '{imap.gmail.com:993/imap/ssl}INBOX'
-				)
+				),
+        		'smtp'=>array(
+		            'class'=>'application.extensions.smtpmail.PHPMailer',
+		            'Host'=>"smtp.gmail.com",
+		            'Username'=>'zinas.nikos.dev@gmail.com',
+		            'Password'=>'potato1pass',
+		            'Mailer'=>'smtp',
+		            'Port'=>587,
+            		'SMTPAuth'=>true,
+            		'SMTPSecure' => 'tls'
+        		),
 			)
 		)
 	),
@@ -89,10 +99,21 @@ return array(
 		),
 	),
 
+	'commandMap' => array(
+		'sendreminders' => array(
+			'class' => 'application.modules.postman.commands.StandupRemindersCommand',
+		),
+		'getreplies' => array(
+			'class' => 'application.modules.postman.commands.GetStandupRepliesCommand',
+		),
+		'sendreports' => array(
+			'class' => 'application.modules.postman.commands.CreateReportsCommand',
+		),
+	),
+
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
 	),
 );

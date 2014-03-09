@@ -52,13 +52,22 @@ class GmailComponent extends CComponent {
 
         return array(
             'subject'       => $overview[0]->subject,
-            'from'          => $overview[0]->from,
+            'project'       => $this->_parseProjectFromSubject($overview[0]->subject),
+            'from'          => $this->_parseMailFromField($overview[0]->from),
             'date'          => $overview[0]->date,
             'in_reply_to'   => $overview[0]->in_reply_to,
             'uid'           => $overview[0]->uid,
-            'subject'       => $overview[0]->subject,
             'body'          => EmailReplyParser::parseReply($message)
         );
     }
 
+    private function _parseMailFromField($mail) {
+        preg_match("/.*<(.*)>\s*/i", $mail, $results);
+        return $results[1];
+    }
+
+    private function _parseProjectFromSubject($subject) {
+        preg_match("/.*\] (.*)/i", $subject, $results);
+        return $results[1];
+    }
 }

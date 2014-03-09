@@ -11,6 +11,7 @@ class PostmanModule extends CWebModule
         $this->setImport(array(
             'postman.models.*',
             'postman.components.*',
+            'postman.commands.*',
         ));
     }
 
