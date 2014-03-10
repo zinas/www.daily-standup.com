@@ -1,119 +1,49 @@
 <?php
+return CMap::mergeArray(
+	require(dirname(__FILE__).'/common.php'),
+	array(
+		'name'=>'Daily Standup',
 
-// uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
+		// preloading 'log' component
+		'preload'=>array('log'),
 
-// This is the main Web application configuration. Any writable
-// CWebApplication properties can be configured here.
-return array(
-	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+		// application components
+		'components'=>array(
+	        'user'=>array(
+	            // enable cookie-based authentication
+	            'allowAutoLogin'=>true,
+	        ),
 
-	// preloading 'log' component
-	'preload'=>array('log'),
+	        'urlManager'=>array(
+	            'urlFormat'=>'path',
+	            'rules'=>array(
+	                // REST patterns
+	                array('api/<model>/list', 'pattern'=>'rest/<model:\w+>', 'verb'=>'GET'),
+	                array('api/<model>/view', 'pattern'=>'rest/<model:\w+>/<id:\d+>', 'verb'=>'GET'),
+	                array('api/<model>/update', 'pattern'=>'rest/<model:\w+>/<id:\d+>', 'verb'=>'PUT'),
+	                array('api/<model>/delete', 'pattern'=>'rest/<model:\w+>/<id:\d+>', 'verb'=>'DELETE'),
+	                array('api/<model>/create', 'pattern'=>'rest/<model:\w+>', 'verb'=>'POST'),
+	                // Other controllers
+	                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+	            ),
+	        ),
 
-	// autoloading model and component classes
-	'import'=>array(
-		'application.models.*',
-		'application.components.*',
-	),
-
-	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-		// 'gii'=>array(
-		// 	'class'=>'system.gii.GiiModule',
-		// 	'password'=>'123',
-		// 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
-		// 	'ipFilters'=>array('127.0.0.1','::1'),
-		// ),
-		'api',
-		'postman' => array(
-			'components' => array(
-				'gmail' => array(
-					'class'=>'GmailComponent',
-					'username' => 'zinas.nikos.dev@gmail.com',
-					'password' => 'potato1pass',
-					'hostname' => '{imap.gmail.com:993/imap/ssl}INBOX'
-				),
-        		'smtp'=>array(
-		            'class'=>'application.extensions.smtpmail.PHPMailer',
-		            'Host'=>"smtp.gmail.com",
-		            'Username'=>'zinas.nikos.dev@gmail.com',
-		            'Password'=>'potato1pass',
-		            'Mailer'=>'smtp',
-		            'Port'=>587,
-            		'SMTPAuth'=>true,
-            		'SMTPSecure' => 'tls'
-        		),
-			)
-		)
-	),
-
-	// application components
-	'components'=>array(
-		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+	        'log'=>array(
+	            'class'=>'CLogRouter',
+	            'routes'=>array(
+	                array(
+	                    'class'=>'CFileLogRoute',
+	                    'levels'=>'error, warning',
+	                ),
+	                // uncomment the following to show log messages on web pages
+	                /*
+	                array(
+	                    'class'=>'CWebLogRoute',
+	                ),
+	                */
+	            ),
+	        ),
 		),
-
-		'urlManager'=>array(
-		    'urlFormat'=>'path',
-		    'rules'=>array(
-		        // REST patterns
-		        array('api/<model>/list', 'pattern'=>'rest/<model:\w+>', 'verb'=>'GET'),
-		        array('api/<model>/view', 'pattern'=>'rest/<model:\w+>/<id:\d+>', 'verb'=>'GET'),
-		        array('api/<model>/update', 'pattern'=>'rest/<model:\w+>/<id:\d+>', 'verb'=>'PUT'),
-		        array('api/<model>/delete', 'pattern'=>'rest/<model:\w+>/<id:\d+>', 'verb'=>'DELETE'),
-		        array('api/<model>/create', 'pattern'=>'rest/<model:\w+>', 'verb'=>'POST'),
-		        // Other controllers
-		        '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-		    ),
-		),
-
-		// uncomment the following to use a MySQL database
-		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=daily-standup',
-			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
-			'charset' => 'utf8',
-		),
-		'errorHandler'=>array(
-			// use 'site/error' action to display errors
-			'errorAction'=>'site/error',
-		),
-		'log'=>array(
-			'class'=>'CLogRouter',
-			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
-			),
-		),
-	),
-
-	'commandMap' => array(
-		'sendreminders' => array(
-			'class' => 'application.modules.postman.commands.StandupRemindersCommand',
-		),
-		'getreplies' => array(
-			'class' => 'application.modules.postman.commands.GetStandupRepliesCommand',
-		),
-		'sendreports' => array(
-			'class' => 'application.modules.postman.commands.CreateReportsCommand',
-		),
-	),
-
-	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
-	'params'=>array(
-		// this is used in contact page
-	),
+	)
 );
+return ;
