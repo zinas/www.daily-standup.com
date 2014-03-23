@@ -1,5 +1,5 @@
 <?php
-class Member extends CActiveRecord {
+class Member extends ActiveRecord {
 
     public function tableName() {return 'members';}
     public static function model($className=__CLASS__) {return parent::model($className);}

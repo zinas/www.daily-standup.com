@@ -1235,3 +1235,146 @@ Stack trace:
 #14 C:\xampp\htdocs\www.daily-standup.com\backend\cli.php(13): CApplication->run()
 #15 {main}
 ---
+2014/03/11 20:47:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "projects".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('projects')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/www.daily-standup.com/backend/projects
+---
+2014/03/11 21:06:06 [error] [exception.CException] exception 'CException' with message 'ProjectsController and its behaviors do not have a method or closure named "send".' in C:\xampp\htdocs\yii-1.1.4\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php(19): CComponent->__call('send', Array)
+#1 C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php(19): ProjectsController->send(Array, 200)
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): ProjectsController->actionList()
+#3 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('list')
+#7 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/projects/li...')
+#8 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/www.daily-standup.com/backend/rest/projects?with=members
+---
+2014/03/18 20:36:07 [error] [exception.CException] exception 'CException' with message 'MembersController and its behaviors do not have a method or closure named "success".' in C:\xampp\htdocs\yii-1.1.4\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\MembersController.php(18): CComponent->__call('success', Array)
+#1 C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\MembersController.php(18): MembersController->success(Object(Member))
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): MembersController->actionView()
+#3 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('view')
+#7 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/members/vie...')
+#8 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/www.daily-standup.com/backend/rest/members/1
+---
+2014/03/18 21:05:44 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php:37)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): ProjectsController->runAction()
+#1 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): ProjectsController->run()
+#3 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CWebApplication->run()
+REQUEST_URI=/www.daily-standup.com/backend/rest/projects
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (37)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 14:42:17 [error] [exception.CDbException] exception 'CDbException' with message 'Relation "" is not defined in active record class "Project".' in C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php:226
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(296): CActiveFinder->buildJoinTree(Object(CJoinElement), '')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#2 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Project), Array)
+#3 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1355): CActiveRecord->getActiveFinder(Array)
+#4 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#5 C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php(12): CActiveRecord->findAll()
+#6 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): ProjectsController->actionList()
+#7 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('list')
+#11 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/projects/li...')
+#12 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/www.daily-standup.com/backend/rest/projects
+---
+2014/03/23 15:59:40 [error] [exception.CException] exception 'CException' with message 'Member and its behaviors do not have a method or closure named "queryAll".' in C:\xampp\htdocs\yii-1.1.4\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\db\ar\CActiveRecord.php(227): CComponent->__call('queryAll', Array)
+#1 C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php(12): CActiveRecord->__call('queryAll', Array)
+#2 C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php(12): Member->queryAll()
+#3 C:\xampp\htdocs\yii-1.1.4\framework\web\actions\CInlineAction.php(49): ProjectsController->actionList()
+#4 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii-1.1.4\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(282): CController->run('list')
+#8 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('api/projects/li...')
+#9 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/www.daily-standup.com/backend/rest/projects
+---
+2014/03/23 17:01:14 [warning] [application] Failed to set unsafe attribute "description" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:01:14 [warning] [application] Failed to set unsafe attribute "last_reminder" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:01:14 [warning] [application] Failed to set unsafe attribute "last_report" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:01:28 [warning] [application] Failed to set unsafe attribute "description" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:01:28 [warning] [application] Failed to set unsafe attribute "last_reminder" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:01:28 [warning] [application] Failed to set unsafe attribute "last_report" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:01:49 [warning] [application] Failed to set unsafe attribute "description" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:01:49 [warning] [application] Failed to set unsafe attribute "last_reminder" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:01:49 [warning] [application] Failed to set unsafe attribute "last_report" of "Project".
+in C:\xampp\htdocs\www.daily-standup.com\backend\protected\modules\api\controllers\ProjectsController.php (25)
+in C:\xampp\htdocs\www.daily-standup.com\backend\index.php (13)
+2014/03/23 17:57:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rest/projects/asdasdads".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('rest/projects/a...')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/www.daily-standup.com/backend/rest/projects/asdasdads
+---
+2014/03/23 17:58:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rest/projects/asdasdads".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('rest/projects/a...')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/www.daily-standup.com/backend/rest/projects/asdasdads
+---
+2014/03/23 17:58:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rest/projects/asdasdads".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('rest/projects/a...')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/www.daily-standup.com/backend/rest/projects/asdasdads
+---
+2014/03/23 18:00:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rest/projects/asdasdasd".' in C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.4\framework\web\CWebApplication.php(141): CWebApplication->runController('rest/projects/a...')
+#1 C:\xampp\htdocs\yii-1.1.4\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\www.daily-standup.com\backend\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/www.daily-standup.com/backend/rest/projects/asdasdasd
+---

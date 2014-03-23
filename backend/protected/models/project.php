@@ -1,5 +1,5 @@
 <?php
-class Project extends CActiveRecord {
+class Project extends ActiveRecord {
 
     public function tableName() {return 'projects';}
     public static function model($className=__CLASS__) {return parent::model($className);}
@@ -9,6 +9,12 @@ class Project extends CActiveRecord {
             'standups'=>array(self::HAS_MANY, 'Standup', 'project_id'),
             'projectMembers'=>array(self::HAS_MANY, 'Project_Member', 'project_id'),
             'members'=>array(self::HAS_MANY, 'Member', 'member_id', 'through' => 'projectMembers'),
+        );
+    }
+
+    public function rules() {
+        return array(
+            array('name, standup_time', 'required'),
         );
     }
 

@@ -1,133 +1,116 @@
 <?php
 /**
- * Controller is the customized base controller class.
- * All controller classes for this application should extend from this base class.
+ * Base controller for all the API controllers. Takes care of sending the response in the proper format.
  */
-class ApiController extends CController
-{
-    /**
-     * @var string the default layout for the controller view. Defaults to '//layouts/main'
-     */
-    public $layout='//layouts/api';
+class ApiController extends CController {
 
     /**
-     * Key which has to be in HTTP USERNAME and PASSWORD headers
-     */
-    Const APPLICATION_ID = 'DAILYSTANDUP';
-
-    /**
-     * Default response format
-     * either 'json' or 'xml'
-     */
-    private $format = 'json';
-
-    /**
-     * Send a 200 response with the results
-     * @param  mixed $response the resultset
-     * @return null
-     */
-    public function success($response) {
-        $this->__sendResponse(CJSON::encode($response), 200);
-    }
-
-    /**
-     * Send a 200 response with the results
-     * @param  mixed $response the resultset
-     * @return null
-     */
-    public function error($message, $status = 500) {
-        $response = $this->__constructErrorResponse($status, $message);
-        $this->__sendResponse(CJSON::encode($response), $status);
-    }
-
-    /**
-     * Constructs the appropriate error response, based on the status and the message
+     * Sends a successful response in a json format
      *
-     * @param  int $status  http status code
-     * @param  string $message optional error message. if omitted, there is one constructed based on the $status
+     * @param  mixed  $response response data
+     * @param  integer $code     response code
      * @return null
      */
-    private function __constructErrorResponse($status, $message = '') {
-        if (!$message) {
-            switch($status) {
-                case 401:
-                    $message = 'You must be authorized to view this page.';
-                    break;
-                case 404:
-                    $message = 'The requested URL ' . $_SERVER['REQUEST_URI'] . ' was not found.';
-                    break;
-                case 500:
-                    $message = 'The server encountered an error processing your request.';
-                    break;
-                case 501:
-                    $message = 'The requested method is not implemented.';
-                    break;
-            }
+    public function respond($response, $code = 200) {
+        if ($response === true || $response === false) {
+            $this->__sendResponse(CJSON::encode(array('success' => $response)), $code);
+        } else {
+            $this->__sendResponse(CJSON::encode($response), $code);
         }
-        $signature = ($_SERVER['SERVER_SIGNATURE'] == '') ? $_SERVER['SERVER_SOFTWARE'] . ' Server at ' . $_SERVER['SERVER_NAME'] . ' Port ' . $_SERVER['SERVER_PORT'] : $_SERVER['SERVER_SIGNATURE'];
-        $response = array(
-            'status' => $status,
-            'codeMessage' => $this->__getStatusCodeMessage($status),
-            'message' => $message,
-            'signature' => $signature
-
-        );
-
-        return $response;
     }
 
+    /**
+     * Responds with the proper error code
+     * @param  integer $code response code
+     * @return null
+     */
+    public function error($code = 500) {
+        $this->__sendResponse(CJSON::encode(array('success' => false, 'reason' => $this->__getStatusCodeDescription($code))), $code);
+    }
 
     /**
-     * [_sendResponse description]
-     * @param  integer $status       [description]
-     * @param  string  $body         [description]
-     * @param  string  $content_type [description]
-     * @return [type]                [description]
+     * Sends the reponse to the client
+     *
+     * @param  string  $body         response body
+     * @param  integer $status       http status code
+     * @param  string  $content_type content type of the response
+     * @return null
      */
-    private function __sendResponse($body, $status = 200, $content_type = 'text/html') {
+    private function __sendResponse($body, $status = 200, $content_type = 'text/json') {
         // set the status
         $status_header = 'HTTP/1.1 ' . $status . ' ' . $this->__getStatusCodeMessage($status);
         header($status_header);
         // and the content type
         header('Content-type: ' . $content_type);
-
-        // pages with body are easy
-        if($body != '') {
-            // send the body
-            echo $body;
-        } else {
-            // create some body messages
-            $message = '';
-
-            // this is purely optional, but makes the pages a little nicer to read
-            // for your users.  Since you won't likely send a lot of different status codes,
-            // this also shouldn't be too ponderous to maintain
-
-
-            echo $body;
-        }
+        echo $body;
         Yii::app()->end();
     }
 
     /**
-     * [_getStatusCodeMessage description]
-     * @param  [type] $status [description]
-     * @return [type]         [description]
+     * Returns the status code message
+     * @param  int $status http status code
+     * @return string
      */
     private function __getStatusCodeMessage($status) {
-        // these could be stored in a .ini file and loaded
-        // via parse_ini_file()... however, this will suffice
-        // for an example
         $codes = Array(
+            // 2xx -> Success codes
             200 => 'OK',
+            201 => 'Created',
+            204 => 'No Content',
+
+            // 4xx -> Client error codes
             400 => 'Bad Request',
             401 => 'Unauthorized',
-            402 => 'Payment Required',
             403 => 'Forbidden',
             404 => 'Not Found',
+            405 => 'Method Not Allowed',
+
+            // 5xx -> server error codes
             500 => 'Internal Server Error',
             501 => 'Not Implemented',
         );
         return (isset($codes[$status])) ? $codes[$status] : '';
+    }
+
+    /**
+     * Returns the status code message
+     * @param  int $status http status code
+     * @return string
+     */
+    private function __getStatusCodeDescription($status) {
+        $codes = Array(
+            // 2xx -> Success codes
+            200 => 'The request was successful',
+            201 => 'The item has been created successfully',
+            204 => '',
+
+            // 4xx -> Client error codes
+            400 => 'There was a problem with the request data',
+            401 => 'You are not authorized to view this',
+            403 => 'You do not have access to this url',
+            404 => 'The item you are looking for could not be found',
+            405 => 'This method is not allowed',
+
+            // 5xx -> server error codes
+            500 => 'There was a problem on the server side',
+            501 => 'This method is not yet implemented (but it should be)',
+        );
+        return (isset($codes[$status])) ? $codes[$status] : '';
+    }
+
+    /**
+     * Gets the json data that were submitted by POST and decodes them
+     * @return array
+     */
+    public function getSubmittedData() {
+        return CJSON::decode(file_get_contents('php://input'),true);
+    }
+
+    /**
+     * Finds the "with" attribute in the GET params and explodes it in an array
+     * @return array
+     */
+    public function getWithParams() {
+        return !is_null($_GET['with'])?explode(',', $_GET['with']):array();
     }
 }
